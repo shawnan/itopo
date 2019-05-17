@@ -1,0 +1,12 @@
+{
+  "name": "itopo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "node build/build.js"
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "webpack": "^4.30.0"
+  }
+}
