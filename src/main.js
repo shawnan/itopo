@@ -82,18 +82,18 @@ import Element from './core/element/index';
       open_hand: 'url(./img/cur/openhand.cur) 8 8, default',
       closed_hand: 'url(./img/cur/closedhand.cur) 8 8, default'
     },
-    createStageFromJson: function (jsonStr$jscomp$1, canvas$jscomp$0) {
-      eval('var jsonObj = ' + jsonStr$jscomp$1);
-      var stage$jscomp$0 = new JTopo.Stage(canvas$jscomp$0);
-      var k$jscomp$1;
-      for (k$jscomp$1 in jsonObj) {
-        if ('childs' != k$jscomp$1) {
-          stage$jscomp$0[k$jscomp$1] = jsonObj[k$jscomp$1];
+    createStageFromJson: function (jsonStr, canvas) {
+      eval('var jsonObj = ' + jsonStr);
+      var stage = new JTopo.Stage(canvas);
+      var attr;
+      for (attr in jsonObj) {
+        if ('childs' != attr) {
+          stage[attr] = jsonObj[attr];
         }
       }
-      var scenes$jscomp$0 = jsonObj.childs;
-      return scenes$jscomp$0.forEach(function (data) {
-        var view = new JTopo.Scene(stage$jscomp$0);
+      var scenes = jsonObj.childs;
+      return scenes.forEach(function (data) {
+        var view = new JTopo.Scene(stage);
         var i;
         for (i in data) {
           if ('childs' != i) {
@@ -121,7 +121,7 @@ import Element from './core/element/index';
           }
           view.add(result);
         });
-      }), stage$jscomp$0;
+      }), stage;
     }
   };
   /** @type {function(): undefined} */
