@@ -7,6 +7,6 @@
   },
   "dependencies": {
     "path": "^0.12.7",
-    "webpack": "^4.30.0"
+    "webpack": "^5.75.0"
   }
 }
